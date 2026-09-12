@@ -957,8 +957,55 @@ img {
 
 .project-desc {
   font-size: 0.875rem;
+  color: var(--color-text-primary);
+  line-height: 1.55;
+}
+
+/* Scannable Engineering Bullets for Recruiters */
+.project-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 0;
+  margin: 0;
+}
+
+.project-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
   color: var(--color-text-muted);
-  line-height: 1.6;
+  line-height: 1.5;
+}
+
+.project-bullet strong {
+  color: var(--color-text-focus);
+  font-weight: 600;
+}
+
+.bullet-dot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: var(--radius-full);
+  margin-top: 0.45rem;
+  flex-shrink: 0;
+}
+
+.bullet-dot-emerald {
+  background: var(--color-primary);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+}
+
+.bullet-dot-sky {
+  background: var(--color-secondary);
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.6);
+}
+
+.bullet-dot-purple {
+  background: var(--color-tertiary);
+  box-shadow: 0 0 6px rgba(167, 139, 250, 0.6);
 }
 
 /* Tech Pills Group */

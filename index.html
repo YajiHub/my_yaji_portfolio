@@ -470,9 +470,231 @@
         </div>
       </section>
 
+      <!-- ====================================================================
+           SECTION 03: TECHNICAL ARSENAL
+           Layout Technique: CSS Grid (2x2 grid on desktop, 1 column on mobile)
+           Chips: Flexbox wrap with inline-flex badge tags
+           ==================================================================== -->
+      <section class="section" id="stack">
+        
+        <!-- Section Header Bar -->
+        <div class="section-header">
+          <div>
+            <div class="section-super section-super-muted">
+              <span>03</span>
+              <span>//</span>
+              <!-- EDITABLE: Section 03 super-label -->
+              <span>Explored &amp; Building</span>
+            </div>
+            <!-- EDITABLE: Section 03 Title -->
+            <h2 class="section-title">Technical Arsenal</h2>
+            <!-- EDITABLE: Section 03 Subtitle -->
+            <p class="section-desc">
+              Currently strengthening fundamentals through academic coursework, capstone development, and hands-on explorations.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2x2 Category Cards Grid -->
+        <div class="stack-grid">
+
+          <!-- Category 1: Core Languages -->
+          <!-- EDITABLE: Category 1 items -->
+          <div class="stack-card">
+            <div class="stack-card-header">
+              <span class="stack-category-title stack-category-emerald">01. Core Languages</span>
+              <span class="material-symbols-outlined" style="color: var(--color-text-dim);">code</span>
+            </div>
+            <div class="stack-chips">
+              <span class="stack-chip">Python</span>
+              <span class="stack-chip">Java</span>
+              <span class="stack-chip">PHP</span>
+              <span class="stack-chip">JavaScript</span>
+              <span class="stack-chip">Dart</span>
+              <span class="stack-chip">SQL</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Frameworks & Mobile -->
+          <!-- EDITABLE: Category 2 items -->
+          <div class="stack-card">
+            <div class="stack-card-header">
+              <span class="stack-category-title stack-category-purple">02. Frameworks &amp; Mobile</span>
+              <span class="material-symbols-outlined" style="color: var(--color-text-dim);">layers</span>
+            </div>
+            <div class="stack-chips">
+              <span class="stack-chip">Laravel</span>
+              <span class="stack-chip">Django</span>
+              <span class="stack-chip">Flutter</span>
+              <span class="stack-chip">React</span>
+              <span class="stack-chip">JavaFX</span>
+              <span class="stack-chip">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Databases & Storage -->
+          <!-- EDITABLE: Category 3 items -->
+          <div class="stack-card">
+            <div class="stack-card-header">
+              <span class="stack-category-title stack-category-sky">03. Databases &amp; Storage</span>
+              <span class="material-symbols-outlined" style="color: var(--color-text-dim);">database</span>
+            </div>
+            <div class="stack-chips">
+              <span class="stack-chip">MySQL</span>
+              <span class="stack-chip">SQLite</span>
+              <span class="stack-chip">PostgreSQL</span>
+              <span class="stack-chip">Firebase Realtime DB</span>
+              <span class="stack-chip">JSON Flat Files</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Tools & Foundations -->
+          <!-- EDITABLE: Category 4 items -->
+          <div class="stack-card">
+            <div class="stack-card-header">
+              <span class="stack-category-title stack-category-emerald">04. Tools &amp; Foundations</span>
+              <span class="material-symbols-outlined" style="color: var(--color-text-dim);">terminal</span>
+            </div>
+            <div class="stack-chips">
+              <span class="stack-chip">Git &amp; GitHub</span>
+              <span class="stack-chip">VS Code</span>
+              <span class="stack-chip">REST APIs</span>
+              <span class="stack-chip">OOP Principles</span>
+              <span class="stack-chip">Postman</span>
+              <span class="stack-chip">Linux Basics</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 04: CODE ACTIVITY & EDUCATION
+           Layout: Stack of structured cards (Heatmap Matrix + Milestones)
+           ==================================================================== -->
+      <section class="section" id="education">
+        
+        <!-- Section Header Bar -->
+        <div class="section-header">
+          <div>
+            <div class="section-super section-super-muted">
+              <span>04</span>
+              <span>//</span>
+              <!-- EDITABLE: Section 04 super-label -->
+              <span>Code Activity &amp; Academics</span>
+            </div>
+            <!-- EDITABLE: Section 04 Title -->
+            <h2 class="section-title">GitHub Contributions &amp; Milestones</h2>
+          </div>
+          <!-- EDITABLE: Date Range -->
+          <div class="section-tags-bar">
+            2021 — 2025
+          </div>
+        </div>
+
+        <div class="education-container">
+
+          <!-- GitHub Heatmap Matrix Card -->
+          <!-- EDITABLE: GitHub Matrix details -->
+          <div class="heatmap-card">
+            <div class="heatmap-header">
+              <div class="heatmap-title-group">
+                <span class="material-symbols-outlined" style="color: var(--color-primary); font-size: 1.25rem;">calendar_month</span>
+                <span class="heatmap-title">GitHub Contribution Matrix</span>
+                <span class="heatmap-commits-pill">340+ commits</span>
+              </div>
+              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="heatmap-repo-link">
+                <span>Visit github.com/jopurjay</span>
+                <span class="material-symbols-outlined" style="font-size: 0.85rem;">arrow_outward</span>
+              </a>
+            </div>
+
+            <!-- Heatmap Month Axis Labels -->
+            <div class="heatmap-months-labels">
+              <span>Jan</span>
+              <span>Mar</span>
+              <span>May</span>
+              <span>Jul</span>
+              <span>Sep</span>
+              <span>Nov</span>
+              <span>Dec</span>
+            </div>
+
+            <!-- 12-Column CSS Grid Heatmap -->
+            <div class="heatmap-matrix-grid">
+              <div class="heatmap-column"><div class="heatmap-cell heat-1"></div><div class="heatmap-cell heat-4"></div><div class="heatmap-cell heat-2"></div><div class="heatmap-cell heat-0"></div></div>
+              <div class="heatmap-column"><div class="heatmap-cell heat-2"></div><div class="heatmap-cell heat-0"></div><div class="heatmap-cell heat-3"></div><div class="heatmap-cell heat-4"></div></div>
+              <div class="heatmap-column"><div class="heatmap-cell heat-4"></div><div class="heatmap-cell heat-2"></div><div class="heatmap-cell heat-1"></div><div class="heatmap-cell heat-3"></div></div>
+              <div class="heatmap-column"><div class="heatmap-cell heat-0"></div><div class="heatmap-cell heat-3"></div><div class="heatmap-cell heat-4"></div><div class="heatmap-cell heat-2"></div></div>
+              <div class="heatmap-column"><div class="heatmap-cell heat-2"></div><div class="heatmap-cell heat-1"></div><div class="heatmap-cell heat-4"></div><div class="heatmap-cell heat-3"></div></div>
+              <div class="heatmap-column"><div class="heatmap-cell heat-4"></div><div class="heatmap-cell heat-4"></div><div class="heatmap-cell heat-2"></div><div class="heatmap-cell heat-0"></div></div>
+              <div class="heatmap-column"><div class="heatmap-cell heat-1"></div><div class="heatmap-cell heat-3"></div><div class="heatmap-cell heat-4"></div><div class="heatmap-cell heat-2"></div></div>
+              <div class="heatmap-column"><div class="heatmap-cell heat-0"></div><div class="heatmap-cell heat-2"></div><div class="heatmap-cell heat-1"></div><div class="heatmap-cell heat-4"></div></div>
+              <div class="heatmap-column"><div class="heatmap-cell heat-3"></div><div class="heatmap-cell heat-4"></div><div class="heatmap-cell heat-2"></div><div class="heatmap-cell heat-1"></div></div>
+              <div class="heatmap-column"><div class="heatmap-cell heat-4"></div><div class="heatmap-cell heat-0"></div><div class="heatmap-cell heat-3"></div><div class="heatmap-cell heat-4"></div></div>
+              <div class="heatmap-column"><div class="heatmap-cell heat-2"></div><div class="heatmap-cell heat-4"></div><div class="heatmap-cell heat-1"></div><div class="heatmap-cell heat-3"></div></div>
+              <div class="heatmap-column"><div class="heatmap-cell heat-4"></div><div class="heatmap-cell heat-3"></div><div class="heatmap-cell heat-4"></div><div class="heatmap-cell heat-2"></div></div>
+            </div>
+
+            <!-- Legend Bar -->
+            <div class="heatmap-legend-bar">
+              <span>14 Repositories</span>
+              <div class="heatmap-legend-scales">
+                <span style="font-size: 0.625rem; color: var(--color-text-dim);">Less</span>
+                <span class="legend-swatch heat-0"></span>
+                <span class="legend-swatch heat-1"></span>
+                <span class="legend-swatch heat-2"></span>
+                <span class="legend-swatch heat-3"></span>
+                <span class="legend-swatch heat-4"></span>
+                <span style="font-size: 0.625rem; color: var(--color-text-dim);">More</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Academic Milestone 1 -->
+          <!-- EDITABLE: Education Degree Details -->
+          <div class="timeline-card">
+            <div class="timeline-left">
+              <span class="timeline-period timeline-period-emerald">2021 — PRES</span>
+              <div class="timeline-content">
+                <h3 class="timeline-heading">BS in Information Technology / Software Development</h3>
+                <p class="timeline-subheading">Senior (4th-Year Candidate)</p>
+                <p class="timeline-desc">
+                  Specializing in software architecture, OOP design patterns, relational database normalization, and web/mobile application deployment.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-tags">
+              <span class="tech-pill">Object-Oriented</span>
+              <span class="tech-pill">Database Systems</span>
+              <span class="tech-pill">Capstone Lead</span>
+            </div>
+          </div>
+
+          <!-- Academic Milestone 2 -->
+          <!-- EDITABLE: Capstone Role Details -->
+          <div class="timeline-card">
+            <div class="timeline-left">
+              <span class="timeline-period timeline-period-muted">2024 — PRES</span>
+              <div class="timeline-content">
+                <h3 class="timeline-heading">Senior Capstone Project Lead</h3>
+                <p class="timeline-subheading">Academic Research &amp; Implementation</p>
+                <p class="timeline-desc">
+                  Heading development for the team's capstone software suite. Coordinating git workflows, code reviews, database schema design, and final defense documentation.
+                </p>
+              </div>
+            </div>
+            <div class="timeline-tags">
+              <span class="tech-pill">JavaFX</span>
+              <span class="tech-pill">SQLite</span>
+              <span class="tech-pill">Agile Sprint</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <!-- Anchors for upcoming modular sections -->
-      <div id="stack"></div>
-      <div id="education"></div>
       <div id="contact"></div>
 
     </div>

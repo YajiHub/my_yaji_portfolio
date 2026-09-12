@@ -1179,3 +1179,332 @@ img {
   color: var(--color-text-focus);
 }
 
+/* --------------------------------------------------------------------------
+   9. TECHNICAL ARSENAL (Section 03)
+   Layout Technique: CSS Grid (2 columns on tablet/desktop, 1 column on mobile)
+   Chips: Flexbox wrap with inline-flex badges
+   -------------------------------------------------------------------------- */
+.stack-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.stack-card {
+  padding: 1.5rem;
+  border-radius: var(--radius-2xl);
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.stack-card:hover {
+  border-color: var(--color-border-hover);
+}
+
+.stack-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stack-category-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.stack-category-emerald {
+  color: var(--color-primary);
+}
+
+.stack-category-purple {
+  color: var(--color-tertiary);
+}
+
+.stack-category-sky {
+  color: var(--color-secondary);
+}
+
+.stack-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.stack-chip {
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-primary);
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+  cursor: default;
+}
+
+.stack-card:nth-child(1) .stack-chip:hover,
+.stack-card:nth-child(4) .stack-chip:hover {
+  border-color: var(--color-border-accent);
+  background: rgba(16, 185, 129, 0.08);
+  transform: translateY(-1px);
+}
+
+.stack-card:nth-child(2) .stack-chip:hover {
+  border-color: rgba(167, 139, 250, 0.4);
+  background: rgba(167, 139, 250, 0.08);
+  transform: translateY(-1px);
+}
+
+.stack-card:nth-child(3) .stack-chip:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.08);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   10. ACTIVITY & EDUCATION TIMELINE (Section 04)
+   -------------------------------------------------------------------------- */
+.education-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* GitHub Heatmap Card */
+.heatmap-card {
+  padding: 1.5rem;
+  border-radius: var(--radius-2xl);
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.heatmap-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .heatmap-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.heatmap-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.heatmap-title {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-focus);
+}
+
+.heatmap-commits-pill {
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+
+.heatmap-repo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  transition: opacity 0.15s ease;
+}
+
+.heatmap-repo-link:hover {
+  text-decoration: underline;
+}
+
+.heatmap-months-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--color-text-dim);
+  padding-inline: 0.25rem;
+}
+
+.heatmap-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.375rem;
+  overflow-x: auto;
+  padding-block: 0.25rem;
+}
+
+.heatmap-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.heatmap-cell {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius-sm);
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.heatmap-cell:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+}
+
+.heat-0 { background: rgba(255, 255, 255, 0.04); }
+.heat-1 { background: rgba(16, 185, 129, 0.2); }
+.heat-2 { background: rgba(16, 185, 129, 0.4); }
+.heat-3 { background: rgba(16, 185, 129, 0.8); }
+.heat-4 { background: var(--color-primary); box-shadow: 0 0 6px rgba(16, 185, 129, 0.3); }
+
+.heatmap-legend-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  padding-top: 0.5rem;
+}
+
+.heatmap-legend-scales {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.legend-swatch {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* Timeline Cards */
+.timeline-card {
+  padding: 1.5rem;
+  border-radius: var(--radius-2xl);
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .timeline-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.timeline-card:hover {
+  border-color: var(--color-border-accent);
+  transform: translateY(-2px);
+}
+
+.timeline-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .timeline-left {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+}
+
+.timeline-period {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  width: 7rem;
+  flex-shrink: 0;
+  padding-top: 0.2rem;
+}
+
+.timeline-period-emerald {
+  color: var(--color-primary);
+}
+
+.timeline-period-muted {
+  color: var(--color-text-dim);
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.timeline-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-focus);
+  line-height: 1.3;
+}
+
+.timeline-subheading {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.timeline-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  max-width: 38rem;
+  line-height: 1.6;
+  margin-top: 0.25rem;
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem;
+  align-self: flex-start;
+}
+
+@media (min-width: 768px) {
+  .timeline-tags {
+    align-self: center;
+  }
+}
+
+

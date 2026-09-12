@@ -36,7 +36,7 @@
        Layout: Flexbox with space-between alignment across mobile and desktop
        ======================================================================== -->
   <header class="navbar" id="top-navbar">
-    <div class="container navbar-container">
+    <div class="navbar-container">
 
       <!-- Monogram & Personal Branding -->
       <!-- EDITABLE: Personal initials and full name -->
@@ -51,10 +51,9 @@
       <!-- Desktop Nav Items -->
       <nav class="nav-links" aria-label="Main Navigation">
         <a href="#projects" class="nav-link">01. Projects</a>
-        <a href="#systems" class="nav-link">02. Platforms</a>
-        <a href="#stack" class="nav-link">03. Tech Stack</a>
-        <a href="#education" class="nav-link">04. Activity &amp; Education</a>
-        <a href="#contact" class="nav-link">05. Contact</a>
+        <a href="#stack" class="nav-link">02. Tech Stack</a>
+        <a href="#education" class="nav-link">03. Activity &amp; Education</a>
+        <a href="#contact" class="nav-link">04. Contact</a>
       </nav>
 
       <!-- Availability Badge & Terminal Shortcut -->
@@ -116,9 +115,9 @@
             <!-- Narrative Paragraph -->
             <!-- EDITABLE: Profile summary & career focus -->
             <p class="hero-bio">
-              4th-year Information Technology / Software Development student passionate about crafting clean code,
-              robust
-              backend architectures, and intuitive user experiences across web, desktop, and mobile.
+              4th-year Information Technology / Software Development student engineering distributed enterprise
+              systems, cloud-native logistics platforms, and AI-powered mobile apps with Flutter, Python (Django DRF),
+              PostgreSQL, and Docker.
             </p>
 
             <!-- Metrics Telemetry Cards (CSS Grid: 3 columns) -->
@@ -129,12 +128,12 @@
                 <span class="metric-label">BS Information Technology / Software Development</span>
               </div>
               <div class="metric-card">
-                <span class="metric-val metric-val-emerald">7+ Stacks</span>
-                <span class="metric-label">Languages &amp; Libs</span>
+                <span class="metric-val metric-val-emerald">3 Core</span>
+                <span class="metric-label">Active Systems &amp; Apps</span>
               </div>
               <div class="metric-card">
                 <span class="metric-val metric-val-sky">Lead</span>
-                <span class="metric-label">Senior Capstone</span>
+                <span class="metric-label">Senior Capstone (BuildPro)</span>
               </div>
             </div>
 
@@ -203,9 +202,8 @@
       </section>
 
       <!-- ====================================================================
-           SECTION 01: FEATURED PROJECTS & ACADEMIC BUILDS
+           SECTION 01: FEATURED PROJECTS (BUILDPRO ENTERPRISE & EATWISE AI)
            Layout Technique: CSS Grid (repeat(auto-fit, minmax(320px, 1fr)) / 3 columns)
-           Why: Fluidly adapts from 1 column on mobile to 3 columns on desktop.
            ==================================================================== -->
       <section class="section" id="projects">
 
@@ -216,62 +214,26 @@
               <span>01</span>
               <span>//</span>
               <!-- EDITABLE: Section 01 super-label -->
-              <span>Featured Projects &amp; Academic Builds</span>
+              <span>Featured Engineering &amp; Capstone Projects</span>
             </div>
             <!-- EDITABLE: Section 01 Title -->
-            <h2 class="section-title">Web, Desktop &amp; Mobile Applications</h2>
+            <h2 class="section-title">Distributed Systems &amp; AI Applications</h2>
             <!-- EDITABLE: Section 01 Subtitle -->
             <p class="section-desc">
-              Academic capstone and side projects covering cross-platform mobile development, desktop management
-              software, and full-stack web platforms.
+              Production-ready enterprise software and AI-powered mobile applications engineered with clean domain-driven
+              architecture, normalized relational schemas, and offline-first reliability.
             </p>
           </div>
           <!-- EDITABLE: Technology category tags -->
           <div class="section-tags-bar">
-            FLUTTER • JAVA • LARAVEL • PYTHON • MYSQL
+            FLUTTER • PYTHON (DJANGO DRF) • POSTGRESQL • DOCKER • GEMINI AI
           </div>
         </div>
 
         <!-- 3-Column Projects Card Grid -->
         <div class="projects-grid">
 
-          <!-- Card 1: CampusPulse (Mobile / Flutter) -->
-          <!-- EDITABLE: Project 1 Details -->
-          <article class="project-card">
-            <div class="project-card-top">
-              <div class="project-meta-strip">
-                <span class="project-badge badge-sky-tint">CROSS-PLATFORM APP</span>
-                <span class="material-symbols-outlined" style="color: var(--color-text-dim);">smartphone</span>
-              </div>
-              <div class="project-header-brand">
-                <div class="project-icon-box project-icon-box-sky">CP</div>
-                <div>
-                  <h3 class="project-title">CampusPulse</h3>
-                  <p class="project-subtitle">Student Community &amp; Event Feed</p>
-                </div>
-              </div>
-              <p class="project-desc">
-                Cross-platform mobile application engineered with Flutter &amp; Firebase. Features local caching,
-                offline sync, clean MVVM state management, and real-time university bulletin updates.
-              </p>
-              <div class="tech-pills">
-                <span class="tech-pill">Flutter</span>
-                <span class="tech-pill">Dart</span>
-                <span class="tech-pill">Firebase</span>
-                <span class="tech-pill">REST API</span>
-              </div>
-            </div>
-            <div class="project-card-footer">
-              <span class="project-card-tag" style="color: var(--color-primary);">Mobile / Android &amp; iOS</span>
-              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="project-card-link">
-                <span>GitHub Repo</span>
-                <span class="material-symbols-outlined" style="font-size: 1rem;">arrow_outward</span>
-              </a>
-            </div>
-          </article>
-
-          <!-- Card 2: StockTrack Pro (Featured Centerpiece Capstone) -->
-          <!-- EDITABLE: Featured Senior Capstone Project Details -->
+          <!-- Card 1: BuildPro: Enterprise POS & Inventory System (CAPSTONE) -->
           <article class="project-card project-card-featured">
             <div class="featured-glow-orb" aria-hidden="true"></div>
 
@@ -279,213 +241,208 @@
               <div class="project-meta-strip">
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
                   <span class="project-badge badge-emerald-tint">ACADEMIC CAPSTONE</span>
-                  <span class="project-badge badge-glass">SENIOR PROJECT</span>
+                  <span class="project-badge badge-glass">DISTRIBUTED ARCHITECTURE</span>
                 </div>
+                <span class="material-symbols-outlined" style="color: var(--color-primary);">point_of_sale</span>
               </div>
+
               <div class="project-header-brand">
                 <div class="project-icon-box project-icon-box-emerald">
                   <span class="material-symbols-outlined" style="font-size: 1.75rem;">inventory_2</span>
                 </div>
                 <div>
-                  <h3 class="project-title" style="font-size: 1.25rem;">StockTrack Pro</h3>
-                  <p class="project-subtitle" style="color: var(--color-primary); font-weight: 500;">Desktop Inventory
-                    &amp; POS Suite</p>
+                  <h3 class="project-title" style="font-size: 1.15rem;">BuildPro: Enterprise POS &amp; Inventory</h3>
+                  <p class="project-subtitle" style="color: var(--color-primary); font-weight: 500;">
+                    Dual-Business POS &amp; Financial Source of Truth
+                  </p>
                 </div>
               </div>
+
               <p class="project-desc" style="color: var(--color-text-primary);">
-                Robust desktop management application developed with Java and JavaFX. Implements local SQLite
-                transactional storage, automated PDF reporting, barcode input, and role-based access control.
+                A robust, containerized Point-of-Sale (POS) and Inventory Management System designed for a dual-business enterprise. BuildPro bridges the gap between retail hardware operations and construction project management. Unlike traditional monolithic POS systems, BuildPro operates on a decoupled architecture, serving as the financial and operational "Source of Truth" that communicates seamlessly with a separate Construction Project Management System (CPMS) via secure REST APIs.
               </p>
+
               <!-- Technical Specs Matrix -->
               <div class="featured-specs-grid">
                 <div class="spec-box">
-                  <div class="spec-label">Architecture</div>
-                  <div class="spec-val">JavaFX / MVC</div>
+                  <div class="spec-label">Domain Architecture</div>
+                  <div class="spec-val" style="color: var(--color-text-focus);">Dockerized Monorepo / DDD</div>
                 </div>
                 <div class="spec-box">
-                  <div class="spec-label">Storage</div>
-                  <div class="spec-val" style="color: var(--color-primary);">SQLite Database</div>
+                  <div class="spec-label">FIFO Inventory</div>
+                  <div class="spec-val" style="color: var(--color-primary);">PostgreSQL COGS Tracking</div>
+                </div>
+                <div class="spec-box">
+                  <div class="spec-label">Dynamic UOM Engine</div>
+                  <div class="spec-val" style="color: var(--color-text-focus);">Multi-Tier Barcoding (Piece/Box/Sack)</div>
+                </div>
+                <div class="spec-box">
+                  <div class="spec-label">Interoperability</div>
+                  <div class="spec-val" style="color: var(--color-secondary);">QR Requisitions → AR Ledger</div>
                 </div>
               </div>
-            </div>
 
-            <div class="project-card-footer"
-              style="flex-direction: column; gap: 0.75rem; position: relative; z-index: 1;">
-              <div class="featured-actions-grid">
-                <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer"
-                  class="btn-card-primary">
-                  <span class="material-symbols-outlined" style="font-size: 0.95rem;">code</span>
-                  <span>View Source</span>
-                </a>
-                <a href="#contact" class="btn-card-secondary">
-                  <span class="material-symbols-outlined" style="font-size: 0.95rem;">download</span>
-                  <span>Documentation</span>
-                </a>
-              </div>
-              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer"
-                class="featured-footer-sublink">
-                <span>Read Capstone Architecture &amp; UML Diagrams</span>
-                <span class="material-symbols-outlined" style="font-size: 0.85rem;">arrow_forward</span>
-              </a>
-            </div>
-          </article>
-
-          <!-- Card 3: CareConnect Portal (Full-Stack Web) -->
-          <!-- EDITABLE: Project 3 Details -->
-          <article class="project-card">
-            <div class="project-card-top">
-              <div class="project-meta-strip">
-                <span class="project-badge badge-purple-tint">FULL-STACK WEB</span>
-                <span class="material-symbols-outlined" style="color: var(--color-text-dim);">language</span>
-              </div>
-              <div class="project-header-brand">
-                <div class="project-icon-box project-icon-box-purple">CC</div>
-                <div>
-                  <h3 class="project-title">CareConnect Portal</h3>
-                  <p class="project-subtitle">Clinic Appointment &amp; Records Web App</p>
-                </div>
-              </div>
-              <p class="project-desc">
-                Comprehensive web portal built using Laravel (PHP) and MySQL with an interactive front-end. Includes
-                secure patient authentication, scheduling calendars, and staff administrative dashboards.
-              </p>
+              <!-- Tech Stack Pills -->
               <div class="tech-pills">
-                <span class="tech-pill">Laravel</span>
-                <span class="tech-pill">PHP</span>
-                <span class="tech-pill">MySQL</span>
-                <span class="tech-pill">Tailwind CSS</span>
+                <span class="tech-pill">Flutter (Desktop &amp; Web)</span>
+                <span class="tech-pill">Dart</span>
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">Django DRF</span>
+                <span class="tech-pill">PostgreSQL (FIFO)</span>
+                <span class="tech-pill">Docker &amp; Compose</span>
+                <span class="tech-pill">RBAC &amp; Audit Logs</span>
+                <span class="tech-pill">Swagger (OpenAPI)</span>
               </div>
             </div>
-            <div class="project-card-footer">
-              <span class="project-card-tag" style="color: var(--color-tertiary);">Web Platform</span>
-              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="project-card-link">
-                <span>GitHub Repo</span>
+
+            <div class="project-card-footer" style="position: relative; z-index: 1;">
+              <span class="project-card-tag" style="color: var(--color-primary);">Enterprise / Desktop &amp; Web</span>
+              <a href="https://github.com/YajiHub" target="_blank" rel="noopener noreferrer" class="project-card-link">
+                <span>View on GitHub</span>
                 <span class="material-symbols-outlined" style="font-size: 1rem;">arrow_outward</span>
               </a>
             </div>
           </article>
 
-        </div>
-      </section>
+          <!-- Card 2: BuildPro: Construction Project Management System (CAPSTONE) -->
+          <article class="project-card project-card-featured project-card-sky">
+            <div class="featured-glow-orb" style="background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%);" aria-hidden="true"></div>
 
-      <!-- ====================================================================
-           SECTION 02: SYSTEMS & UTILITIES EXPLORATION
-           Layout Technique: CSS Grid (3 equal columns on desktop, stacked on mobile)
-           ==================================================================== -->
-      <section class="section" id="systems">
-
-        <!-- Section Header Bar -->
-        <div class="section-header">
-          <div>
-            <div class="section-super section-super-sky">
-              <span>02</span>
-              <span>//</span>
-              <!-- EDITABLE: Section 02 super-label -->
-              <span>Explorations &amp; Utilities</span>
-            </div>
-            <!-- EDITABLE: Section 02 Title -->
-            <h2 class="section-title">Hands-on Software &amp; Tools</h2>
-            <!-- EDITABLE: Section 02 Subtitle -->
-            <p class="section-desc">
-              Practical software projects, utility scripts, and exploratory web applications built during coursework and
-              self-directed study.
-            </p>
-          </div>
-          <!-- EDITABLE: Section 02 Tags -->
-          <div class="section-tags-bar">
-            PYTHON • LARAVEL • FLUTTER • POSTGRESQL
-          </div>
-        </div>
-
-        <!-- 3-Column Systems Grid -->
-        <div class="systems-grid">
-
-          <!-- System 1: DevForum Community -->
-          <!-- EDITABLE: System 1 Details -->
-          <article class="system-card">
-            <div>
-              <div class="system-meta-strip">
-                <span class="system-category" style="color: var(--color-primary);">WEB SYSTEM // LARAVEL</span>
-                <span class="system-status-indicator" style="background: var(--color-primary);"></span>
+            <div class="project-card-top" style="position: relative; z-index: 1;">
+              <div class="project-meta-strip">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span class="project-badge badge-sky-tint">ACADEMIC CAPSTONE</span>
+                  <span class="project-badge badge-glass">CLOUD-NATIVE CPMS</span>
+                </div>
+                <span class="material-symbols-outlined" style="color: var(--color-secondary);">construction</span>
               </div>
-              <h3 class="system-title">DevForum Community</h3>
-              <p class="system-desc">
-                Discussion forum for university peers featuring threaded replies, markdown code formatting, user
-                reputation points, and category filtering.
+
+              <div class="project-header-brand">
+                <div class="project-icon-box project-icon-box-sky">
+                  <span class="material-symbols-outlined" style="font-size: 1.75rem;">domain</span>
+                </div>
+                <div>
+                  <h3 class="project-title" style="font-size: 1.15rem;">BuildPro: Construction Project Management</h3>
+                  <p class="project-subtitle" style="color: var(--color-secondary); font-weight: 500;">
+                    Cross-Platform CPMS &amp; Logistics Ecosystem
+                  </p>
+                </div>
+              </div>
+
+              <p class="project-desc" style="color: var(--color-text-primary);">
+                A cross-platform, cloud-native project management system engineered for mid-sized construction firms. Acting as the second half of a distributed enterprise ecosystem, this CPMS handles project lifecycles, on-site logistics, and financial tracking. It is architected to communicate securely via REST APIs with an external Hardware POS system, automating material requisition and debt (accounts payable) synchronization without requiring a shared monolithic database.
               </p>
-              <div class="tech-pills" style="margin-top: 0.75rem;">
-                <span class="tech-pill">Laravel</span>
-                <span class="tech-pill">Blade</span>
-                <span class="tech-pill">MySQL</span>
-              </div>
-            </div>
-            <div class="system-card-footer">
-              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer"
-                class="system-link-action">
-                <span>Project Code ↗</span>
-              </a>
-              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="system-link-repo">
-                <span>GitHub Repo ↗</span>
-              </a>
-            </div>
-          </article>
 
-          <!-- System 2: DataScrape & Pipeline -->
-          <!-- EDITABLE: System 2 Details -->
-          <article class="system-card">
-            <div>
-              <div class="system-meta-strip">
-                <span class="system-category" style="color: var(--color-secondary);">AUTOMATION // PYTHON</span>
-                <span class="system-status-indicator" style="background: var(--color-secondary);"></span>
+              <!-- Technical Specs Matrix -->
+              <div class="featured-specs-grid">
+                <div class="spec-box">
+                  <div class="spec-label">Billing Engine</div>
+                  <div class="spec-val" style="color: var(--color-text-focus);">Weighted WBS Aggregation</div>
+                </div>
+                <div class="spec-box">
+                  <div class="spec-label">Logistics Workflow</div>
+                  <div class="spec-val" style="color: var(--color-secondary);">Forced Site Inventory Auditing</div>
+                </div>
+                <div class="spec-box">
+                  <div class="spec-label">Requisitions Pipeline</div>
+                  <div class="spec-val" style="color: var(--color-text-focus);">UUID-Based QR Digital Tokens</div>
+                </div>
+                <div class="spec-box">
+                  <div class="spec-label">Ledger Sync</div>
+                  <div class="spec-val" style="color: var(--color-primary);">Live Accounts Payable API</div>
+                </div>
               </div>
-              <h3 class="system-title">DataScrape &amp; Pipeline</h3>
-              <p class="system-desc">
-                Automated web scraper and CSV export tool designed to aggregate educational resources, schedule tables,
-                and sanitize tabular datasets.
-              </p>
-              <div class="tech-pills" style="margin-top: 0.75rem;">
-                <span class="tech-pill">Python</span>
-                <span class="tech-pill">BeautifulSoup</span>
-                <span class="tech-pill">Pandas</span>
-              </div>
-            </div>
-            <div class="system-card-footer">
-              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="system-link-action"
-                style="color: var(--color-secondary);">
-                <span>Scripts ↗</span>
-              </a>
-              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="system-link-repo">
-                <span>Documentation ↗</span>
-              </a>
-            </div>
-          </article>
 
-          <!-- System 3: HabitFlow Tracker -->
-          <!-- EDITABLE: System 3 Details -->
-          <article class="system-card">
-            <div>
-              <div class="system-meta-strip">
-                <span class="system-category" style="color: var(--color-tertiary);">MOBILE UI // FLUTTER</span>
-                <span class="system-status-indicator" style="background: var(--color-tertiary);"></span>
-              </div>
-              <h3 class="system-title">HabitFlow Tracker</h3>
-              <p class="system-desc">
-                Minimalist habit tracker with daily streaks, local notifications, dark-mode styling, and local SQLite
-                state persistence.
-              </p>
-              <div class="tech-pills" style="margin-top: 0.75rem;">
-                <span class="tech-pill">Flutter</span>
+              <!-- Tech Stack Pills -->
+              <div class="tech-pills">
+                <span class="tech-pill">Flutter (Android &amp; Desktop)</span>
                 <span class="tech-pill">Dart</span>
-                <span class="tech-pill">SQLite</span>
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">Django DRF</span>
+                <span class="tech-pill">PostgreSQL</span>
+                <span class="tech-pill">Docker</span>
+                <span class="tech-pill">JWT</span>
+                <span class="tech-pill">Distributed Systems</span>
               </div>
             </div>
-            <div class="system-card-footer">
-              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="system-link-action"
-                style="color: var(--color-tertiary);">
-                <span>Demo APK ↗</span>
+
+            <div class="project-card-footer" style="position: relative; z-index: 1;">
+              <span class="project-card-tag" style="color: var(--color-secondary);">Distributed / Android &amp; Desktop</span>
+              <a href="https://github.com/YajiHub" target="_blank" rel="noopener noreferrer" class="project-card-link">
+                <span>View on GitHub</span>
+                <span class="material-symbols-outlined" style="font-size: 1rem;">arrow_outward</span>
               </a>
-              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="system-link-repo">
-                <span>GitHub Repo ↗</span>
+            </div>
+          </article>
+
+          <!-- Card 3: EatWise — AI-Powered Nutrition & Fitness Tracker -->
+          <article class="project-card project-card-featured project-card-purple">
+            <div class="featured-glow-orb" style="background: radial-gradient(circle, rgba(167, 139, 250, 0.15) 0%, transparent 70%);" aria-hidden="true"></div>
+
+            <div class="project-card-top" style="position: relative; z-index: 1;">
+              <div class="project-meta-strip">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span class="project-badge badge-purple-tint">AI &amp; HEALTH TECH</span>
+                  <span class="project-badge badge-glass">OFFLINE-FIRST</span>
+                </div>
+                <span class="material-symbols-outlined" style="color: var(--color-tertiary);">nutrition</span>
+              </div>
+
+              <div class="project-header-brand">
+                <div class="project-icon-box project-icon-box-purple">
+                  <span class="material-symbols-outlined" style="font-size: 1.75rem;">restaurant</span>
+                </div>
+                <div>
+                  <h3 class="project-title" style="font-size: 1.15rem;">EatWise: AI Nutrition &amp; Fitness Tracker</h3>
+                  <p class="project-subtitle" style="color: var(--color-tertiary); font-weight: 500;">
+                    Vision AI &amp; Chat Tracking // Filipino Cuisine Focus
+                  </p>
+                </div>
+              </div>
+
+              <p class="project-desc" style="color: var(--color-text-primary);">
+                A Flutter mobile app that makes calorie and macro tracking effortless without requiring a food scale. Snap a photo of your meal or type natural language queries ("I ate 2 cups of rice and adobo") — AI instantly estimates nutrition. Built with an automated LLM fallback cascade (Gemini → Groq → OpenRouter), defensive JSON validation, weekly stats charts, fasting timer, and offline-first SQLite storage.
+              </p>
+
+              <!-- Technical Specs Matrix -->
+              <div class="featured-specs-grid">
+                <div class="spec-box">
+                  <div class="spec-label">3-Way Input</div>
+                  <div class="spec-val" style="color: var(--color-text-focus);">Vision + Natural Language + Barcode</div>
+                </div>
+                <div class="spec-box">
+                  <div class="spec-label">AI Resilience</div>
+                  <div class="spec-val" style="color: var(--color-tertiary);">Gemini → Groq → OpenRouter Fallback</div>
+                </div>
+                <div class="spec-box">
+                  <div class="spec-label">Architecture &amp; State</div>
+                  <div class="spec-val" style="color: var(--color-text-focus);">Feature-First / Riverpod + GoRouter</div>
+                </div>
+                <div class="spec-box">
+                  <div class="spec-label">Data Tier</div>
+                  <div class="spec-val" style="color: var(--color-primary);">Offline SQLite (sqflite) + Supabase</div>
+                </div>
+              </div>
+
+              <!-- Tech Stack Pills -->
+              <div class="tech-pills">
+                <span class="tech-pill">Flutter 3.22+</span>
+                <span class="tech-pill">Dart</span>
+                <span class="tech-pill">Riverpod</span>
+                <span class="tech-pill">Google Gemini Vision</span>
+                <span class="tech-pill">Groq</span>
+                <span class="tech-pill">OpenRouter</span>
+                <span class="tech-pill">SQLite (sqflite)</span>
+                <span class="tech-pill">Supabase</span>
+                <span class="tech-pill">fl_chart</span>
+              </div>
+            </div>
+
+            <div class="project-card-footer" style="position: relative; z-index: 1;">
+              <span class="project-card-tag" style="color: var(--color-tertiary);">Mobile / Android &amp; iOS</span>
+              <a href="https://github.com/YajiHub" target="_blank" rel="noopener noreferrer" class="project-card-link">
+                <span>View on GitHub</span>
+                <span class="material-symbols-outlined" style="font-size: 1rem;">arrow_outward</span>
               </a>
             </div>
           </article>
@@ -504,17 +461,17 @@
         <div class="section-header">
           <div>
             <div class="section-super section-super-muted">
-              <span>03</span>
+              <span>02</span>
               <span>//</span>
-              <!-- EDITABLE: Section 03 super-label -->
+              <!-- EDITABLE: Section 02 super-label -->
               <span>Explored &amp; Building</span>
             </div>
-            <!-- EDITABLE: Section 03 Title -->
+            <!-- EDITABLE: Section 02 Title -->
             <h2 class="section-title">Technical Arsenal</h2>
-            <!-- EDITABLE: Section 03 Subtitle -->
+            <!-- EDITABLE: Section 02 Subtitle -->
             <p class="section-desc">
-              Currently strengthening fundamentals through academic coursework, capstone development, and hands-on
-              explorations.
+              Core technologies, architectural patterns, and development tools leveraged across distributed systems and
+              AI-driven mobile applications.
             </p>
           </div>
         </div>
@@ -523,7 +480,6 @@
         <div class="stack-grid">
 
           <!-- Category 1: Core Languages -->
-          <!-- EDITABLE: Category 1 items -->
           <div class="stack-card">
             <div class="stack-card-header">
               <span class="stack-category-title stack-category-emerald">01. Core Languages</span>
@@ -531,60 +487,57 @@
             </div>
             <div class="stack-chips">
               <span class="stack-chip">Python</span>
-              <span class="stack-chip">Java</span>
-              <span class="stack-chip">PHP</span>
-              <span class="stack-chip">JavaScript</span>
               <span class="stack-chip">Dart</span>
               <span class="stack-chip">SQL</span>
+              <span class="stack-chip">JavaScript</span>
+              <span class="stack-chip">HTML5 / CSS3</span>
             </div>
           </div>
 
           <!-- Category 2: Frameworks & Mobile -->
-          <!-- EDITABLE: Category 2 items -->
           <div class="stack-card">
             <div class="stack-card-header">
               <span class="stack-category-title stack-category-purple">02. Frameworks &amp; Mobile</span>
               <span class="material-symbols-outlined" style="color: var(--color-text-dim);">layers</span>
             </div>
             <div class="stack-chips">
-              <span class="stack-chip">Laravel</span>
+              <span class="stack-chip">Flutter 3.22+</span>
               <span class="stack-chip">Django</span>
-              <span class="stack-chip">Flutter</span>
-              <span class="stack-chip">React</span>
-              <span class="stack-chip">JavaFX</span>
+              <span class="stack-chip">Django REST (DRF)</span>
+              <span class="stack-chip">Riverpod</span>
+              <span class="stack-chip">GoRouter</span>
               <span class="stack-chip">Tailwind CSS</span>
             </div>
           </div>
 
-          <!-- Category 3: Databases & Storage -->
-          <!-- EDITABLE: Category 3 items -->
+          <!-- Category 3: Databases & DevOps -->
           <div class="stack-card">
             <div class="stack-card-header">
-              <span class="stack-category-title stack-category-sky">03. Databases &amp; Storage</span>
+              <span class="stack-category-title stack-category-sky">03. Databases &amp; DevOps</span>
               <span class="material-symbols-outlined" style="color: var(--color-text-dim);">database</span>
             </div>
             <div class="stack-chips">
-              <span class="stack-chip">MySQL</span>
-              <span class="stack-chip">SQLite</span>
-              <span class="stack-chip">PostgreSQL</span>
-              <span class="stack-chip">Firebase Realtime DB</span>
+              <span class="stack-chip">PostgreSQL (FIFO)</span>
+              <span class="stack-chip">SQLite (sqflite)</span>
+              <span class="stack-chip">Supabase</span>
+              <span class="stack-chip">Docker</span>
+              <span class="stack-chip">docker-compose</span>
             </div>
           </div>
 
-          <!-- Category 4: Tools & Foundations -->
-          <!-- EDITABLE: Category 4 items -->
+          <!-- Category 4: AI, Tools & Architecture -->
           <div class="stack-card">
             <div class="stack-card-header">
-              <span class="stack-category-title stack-category-emerald">04. Tools &amp; Foundations</span>
+              <span class="stack-category-title stack-category-emerald">04. AI &amp; Architecture</span>
               <span class="material-symbols-outlined" style="color: var(--color-text-dim);">terminal</span>
             </div>
             <div class="stack-chips">
+              <span class="stack-chip">Google Gemini AI</span>
+              <span class="stack-chip">Groq &amp; OpenRouter</span>
+              <span class="stack-chip">Domain-Driven (DDD)</span>
+              <span class="stack-chip">REST APIs &amp; Swagger</span>
+              <span class="stack-chip">JWT Auth</span>
               <span class="stack-chip">Git &amp; GitHub</span>
-              <span class="stack-chip">VS Code</span>
-              <span class="stack-chip">REST APIs</span>
-              <span class="stack-chip">OOP Principles</span>
-              <span class="stack-chip">Prompt Engineering</span>
-              <span class="stack-chip">Linux Basics</span>
             </div>
           </div>
 
@@ -592,7 +545,7 @@
       </section>
 
       <!-- ====================================================================
-           SECTION 04: CODE ACTIVITY & EDUCATION
+           SECTION 03: CODE ACTIVITY & EDUCATION
            Layout: Stack of structured cards (Heatmap Matrix + Milestones)
            ==================================================================== -->
       <section class="section" id="education">
@@ -601,12 +554,12 @@
         <div class="section-header">
           <div>
             <div class="section-super section-super-muted">
-              <span>04</span>
+              <span>03</span>
               <span>//</span>
-              <!-- EDITABLE: Section 04 super-label -->
+              <!-- EDITABLE: Section 03 super-label -->
               <span>Code Activity &amp; Academics</span>
             </div>
-            <!-- EDITABLE: Section 04 Title -->
+            <!-- EDITABLE: Section 03 Title -->
             <h2 class="section-title">GitHub Contributions &amp; Milestones</h2>
           </div>
           <!-- EDITABLE: Date Range -->
@@ -765,18 +718,18 @@
             <div class="timeline-left">
               <span class="timeline-period timeline-period-muted">2024 — PRES</span>
               <div class="timeline-content">
-                <h3 class="timeline-heading">Senior Capstone Project Lead</h3>
-                <p class="timeline-subheading">Academic Research &amp; Implementation</p>
+                <h3 class="timeline-heading">Senior Capstone Project Lead — BuildPro Ecosystem</h3>
+                <p class="timeline-subheading">Architecture, Interoperability &amp; Implementation</p>
                 <p class="timeline-desc">
-                  Heading development for the team's capstone software suite. Coordinating git workflows, code reviews,
-                  database schema design, and final defense documentation.
+                  Leading full-lifecycle architecture for BuildPro, a distributed enterprise suite bridging hardware POS/inventory operations with construction project management. Coordinating monorepo workflows, REST API contracts, PostgreSQL FIFO schemas, and final defense documentation.
                 </p>
               </div>
             </div>
             <div class="timeline-tags">
-              <span class="tech-pill">JavaFX</span>
-              <span class="tech-pill">SQLite</span>
-              <span class="tech-pill">Agile Sprint</span>
+              <span class="tech-pill">Flutter &amp; Dart</span>
+              <span class="tech-pill">Django DRF</span>
+              <span class="tech-pill">PostgreSQL (FIFO)</span>
+              <span class="tech-pill">Docker Monorepo</span>
             </div>
           </div>
 
@@ -784,7 +737,7 @@
       </section>
 
       <!-- ====================================================================
-           SECTION 05: INTERACTIVE TERMINAL & CONTACT
+           SECTION 04: INTERACTIVE TERMINAL & CONTACT
            Layout: High-contrast terminal emulator card with interactive actions
            ==================================================================== -->
       <section class="section" id="contact">

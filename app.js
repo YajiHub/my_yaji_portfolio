@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (copyCurlBtn) {
     let curlTimeout = null;
-    const curlCommand = `curl -X POST https://api.jopurjay.dev/contact \\\n  -H "Role: Junior Software Engineer / Intern" \\\n  -d '{"intent": "collaborate", "candidate": "Jopur Jay Montecillo"}'`;
+    const curlCommand = 'curl -s https://raw.githubusercontent.com/YajiHub/portfolio/main/contact.json';
 
     copyCurlBtn.addEventListener('click', async () => {
       try {

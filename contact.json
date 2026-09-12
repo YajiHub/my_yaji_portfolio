@@ -1,0 +1,22 @@
+{
+  "candidate": "Jopur Jay Montecillo",
+  "role": "Software Developer // 4th Year IT Student",
+  "status": "OPEN_FOR_OPPORTUNITIES",
+  "email": "jopurjay23@gmail.com",
+  "github": "https://github.com/YajiHub",
+  "location": "Quezon, Bukidnon, Philippines",
+  "timezone": "UTC+8",
+  "core_competencies": [
+    "Distributed POS & CPMS Architecture",
+    "PostgreSQL Relational Normalization & FIFO Batching",
+    "Python / Django REST Framework",
+    "Flutter 3.22+ / Riverpod Cross-Platform Apps",
+    "Multimodal AI Integration (Google Gemini)",
+    "Docker Monorepo Orchestration"
+  ],
+  "preferred_roles": [
+    "Junior Software Engineer",
+    "Full-Stack Developer Intern",
+    "Mobile Developer (Flutter)"
+  ]
+}

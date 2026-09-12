@@ -411,8 +411,20 @@
               </a>
             </div>
           </article>
-
         </div>
+
+        <!-- Scalable Project Archive & Repositories Banner -->
+        <div class="projects-archive-banner">
+          <div class="archive-banner-text">
+            <span class="archive-badge">ARCHIVE &amp; LABS</span>
+            <span>Exploring additional utilities, repositories, or experimental prototypes?</span>
+          </div>
+          <a href="https://github.com/YajiHub?tab=repositories" target="_blank" rel="noopener noreferrer" class="archive-banner-btn">
+            <span>Explore All Repositories on GitHub</span>
+            <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span>
+          </a>
+        </div>
+
       </section>
 
       <!-- ====================================================================
@@ -717,8 +729,14 @@
               <!-- EDITABLE: Terminal window title -->
               <span class="terminal-path">bash — contact@jopurjay23@gmail.com:~$</span>
             </div>
-            <!-- EDITABLE: Terminal status label -->
-            <span class="terminal-badge-status">OPEN_FOR_OPPORTUNITIES</span>
+            <div class="terminal-header-right">
+              <button class="terminal-copy-btn" id="copyCurlBtn" type="button" aria-label="Copy cURL command to clipboard">
+                <span class="material-symbols-outlined" id="curlCopyIcon" style="font-size: 0.875rem;">content_copy</span>
+                <span id="curlCopyLabel">Copy cURL</span>
+              </button>
+              <!-- EDITABLE: Terminal status label -->
+              <span class="terminal-badge-status">OPEN_FOR_OPPORTUNITIES</span>
+            </div>
           </div>
 
           <!-- Code Emulator Window -->

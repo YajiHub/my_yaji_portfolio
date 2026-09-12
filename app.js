@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dateRange = chunk.length > 0 ? `${chunk[0].date} to ${chunk[chunk.length - 1].date}` : mKey;
             const tooltip = `${totalWeekCount} contribution${totalWeekCount === 1 ? '' : 's'} (${dateRange})`;
 
-            newGridHTML += `<div class="heatmap-cell heat-${maxLevel}" title="${tooltip}"></div>`;
+            newGridHTML += `<div class="heatmap-cell heat-${maxLevel}" data-tooltip="${tooltip}"></div>`;
           }
 
           newGridHTML += '</div>';
@@ -194,4 +194,108 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   loadLiveGitHubData(GITHUB_USERNAME);
+
+  // 5. GitHub Heatmap Floating Glass Tooltip
+  const heatmapGrid = document.getElementById('githubHeatmapGrid');
+  let heatmapTooltip = document.getElementById('heatmapTooltip');
+  if (!heatmapTooltip) {
+    heatmapTooltip = document.createElement('div');
+    heatmapTooltip.id = 'heatmapTooltip';
+    heatmapTooltip.className = 'heatmap-tooltip';
+    document.body.appendChild(heatmapTooltip);
+  }
+
+  if (heatmapGrid) {
+    heatmapGrid.addEventListener('mouseover', (e) => {
+      const cell = e.target.closest('.heatmap-cell');
+      if (!cell) return;
+      const text = cell.getAttribute('data-tooltip') || cell.getAttribute('title') || 'Contribution activity';
+      if (cell.hasAttribute('title')) {
+        cell.setAttribute('data-tooltip', cell.getAttribute('title'));
+        cell.removeAttribute('title');
+      }
+      heatmapTooltip.textContent = text;
+      heatmapTooltip.classList.add('visible');
+    });
+
+    heatmapGrid.addEventListener('mousemove', (e) => {
+      const cell = e.target.closest('.heatmap-cell');
+      if (!cell) {
+        heatmapTooltip.classList.remove('visible');
+        return;
+      }
+      heatmapTooltip.style.left = `${e.clientX}px`;
+      heatmapTooltip.style.top = `${e.clientY}px`;
+    });
+
+    heatmapGrid.addEventListener('mouseout', (e) => {
+      const cell = e.target.closest('.heatmap-cell');
+      if (cell) {
+        heatmapTooltip.classList.remove('visible');
+      }
+    });
+  }
+
+  // 6. Project Cards Cursor Spotlight Glow
+  const projectCards = document.querySelectorAll('.project-card');
+  projectCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--mouse-x', `${x}px`);
+      card.style.setProperty('--mouse-y', `${y}px`);
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--mouse-x', '-500px');
+      card.style.setProperty('--mouse-y', '-500px');
+    });
+  });
+
+  // 7. Terminal cURL Command Clipboard Copy
+  const copyCurlBtn = document.getElementById('copyCurlBtn');
+  const curlCopyLabel = document.getElementById('curlCopyLabel');
+  const curlCopyIcon = document.getElementById('curlCopyIcon');
+
+  if (copyCurlBtn) {
+    let curlTimeout = null;
+    const curlCommand = `curl -X POST https://api.jopurjay.dev/contact \\\n  -H "Role: Junior Software Engineer / Intern" \\\n  -d '{"intent": "collaborate", "candidate": "Jopur Jay Montecillo"}'`;
+
+    copyCurlBtn.addEventListener('click', async () => {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(curlCommand);
+        } else {
+          const textArea = document.createElement('textarea');
+          textArea.value = curlCommand;
+          textArea.style.position = 'fixed';
+          textArea.style.opacity = '0';
+          document.body.appendChild(textArea);
+          textArea.focus();
+          textArea.select();
+          document.execCommand('copy');
+          document.body.removeChild(textArea);
+        }
+
+        copyCurlBtn.classList.add('copied');
+        if (curlCopyLabel) curlCopyLabel.textContent = 'Copied!';
+        if (curlCopyIcon) curlCopyIcon.textContent = 'done';
+        copyCurlBtn.setAttribute('aria-label', 'cURL command copied to clipboard');
+
+        if (curlTimeout) clearTimeout(curlTimeout);
+        curlTimeout = setTimeout(() => {
+          copyCurlBtn.classList.remove('copied');
+          if (curlCopyLabel) curlCopyLabel.textContent = 'Copy cURL';
+          if (curlCopyIcon) curlCopyIcon.textContent = 'content_copy';
+          copyCurlBtn.setAttribute('aria-label', 'Copy cURL command to clipboard');
+        }, 2200);
+      } catch (err) {
+        console.error('Failed to copy curl command:', err);
+        if (curlCopyLabel) curlCopyLabel.textContent = 'Error';
+        setTimeout(() => {
+          if (curlCopyLabel) curlCopyLabel.textContent = 'Copy cURL';
+        }, 2000);
+      }
+    });
+  }
 });

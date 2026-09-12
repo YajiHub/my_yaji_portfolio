@@ -694,11 +694,101 @@
         </div>
       </section>
 
-      <!-- Anchors for upcoming modular sections -->
-      <div id="contact"></div>
+      <!-- ====================================================================
+           SECTION 05: INTERACTIVE TERMINAL & CONTACT
+           Layout: High-contrast terminal emulator card with interactive actions
+           ==================================================================== -->
+      <section class="section" id="contact">
+        <div class="terminal-contact-card">
+
+          <!-- Terminal Top Controls Bar -->
+          <div class="terminal-header">
+            <div class="terminal-controls">
+              <span class="traffic-dot traffic-dot-red" aria-hidden="true"></span>
+              <span class="traffic-dot traffic-dot-yellow" aria-hidden="true"></span>
+              <span class="traffic-dot traffic-dot-green" aria-hidden="true"></span>
+              <!-- EDITABLE: Terminal window title -->
+              <span class="terminal-path">bash — contact@jopurjay:~$</span>
+            </div>
+            <!-- EDITABLE: Terminal status label -->
+            <span class="terminal-badge-status">OPEN_FOR_OPPORTUNITIES</span>
+          </div>
+
+          <!-- Code Emulator Window -->
+          <!-- EDITABLE: Simulated CLI contact payload -->
+          <div class="terminal-code-box">
+            <div class="code-comment"># Send an inquiry for junior developer, internship, or project roles:</div>
+            <div>
+              <span class="code-prompt">&gt;</span>
+              <span class="code-cmd">curl -X POST https://api.jopurjay.dev/contact \</span>
+            </div>
+            <div class="code-flag">-H "Role: Junior Software Engineer / Intern" \</div>
+            <div class="code-json">-d '{"intent": "collaborate", "candidate": "Jopur Jay Montecillo"}'</div>
+          </div>
+
+          <!-- Email Action Strip -->
+          <div class="contact-actions-strip">
+            <div class="contact-email-group">
+              <div class="contact-icon-box">
+                <span class="material-symbols-outlined" style="font-size: 1.25rem;">mail</span>
+              </div>
+              <div>
+                <!-- EDITABLE: Direct email address -->
+                <span class="contact-email-address" id="contactEmail">jopurjay.montecillo@gmail.com</span>
+                <!-- EDITABLE: Response time and timezone note -->
+                <span class="contact-availability-sub">Response time: within 24 hours • Manila (UTC+8)</span>
+              </div>
+            </div>
+
+            <!-- Email Action Buttons -->
+            <div class="contact-buttons-group">
+              <button type="button" class="btn-contact-copy" id="copyEmailBtn" aria-label="Copy email address to clipboard">
+                <span class="material-symbols-outlined" id="copyIcon" style="font-size: 1rem;">content_copy</span>
+                <span id="copyLabel">Copy Email</span>
+              </button>
+              <!-- EDITABLE: Mailto link -->
+              <a href="mailto:jopurjay.montecillo@gmail.com" class="btn-contact-compose" aria-label="Compose an email">
+                <span>Compose</span>
+                <span class="material-symbols-outlined" style="font-size: 1rem;">send</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Social and Location Footer Strip -->
+          <!-- EDITABLE: Social profile links and location metadata -->
+          <div class="contact-meta-footer">
+            <div class="contact-social-links">
+              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="contact-social-link">github.com/jopurjay</a>
+              <span>•</span>
+              <a href="https://linkedin.com/in/jopurjaymontecillo" target="_blank" rel="noopener noreferrer" class="contact-social-link">linkedin.com/in/jopurjaymontecillo</a>
+            </div>
+            <div>
+              <span>PHILIPPINES // UTC+8</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
 
     </div>
   </main>
+
+  <!-- ========================================================================
+       BOTTOM SYSTEM STATUS STRIP (Footer)
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-system-status">
+        <span class="status-dot" style="width: 6px; height: 6px;"></span>
+        <!-- EDITABLE: Footer operational status -->
+        <span>ALL SYSTEMS OPERATIONAL // OPEN FOR OPPORTUNITIES</span>
+      </div>
+      <div>
+        <!-- EDITABLE: Copyright statement -->
+        <span>© 2025 JOPUR JAY MONTECILLO. BUILT WITH WEB &amp; DESKTOP TECHNOLOGIES.</span>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

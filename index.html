@@ -194,9 +194,283 @@
         </div>
       </section>
 
+      <!-- ====================================================================
+           SECTION 01: FEATURED PROJECTS & ACADEMIC BUILDS
+           Layout Technique: CSS Grid (repeat(auto-fit, minmax(320px, 1fr)) / 3 columns)
+           Why: Fluidly adapts from 1 column on mobile to 3 columns on desktop.
+           ==================================================================== -->
+      <section class="section" id="projects">
+        
+        <!-- Section Header Bar -->
+        <div class="section-header">
+          <div>
+            <div class="section-super section-super-emerald">
+              <span>01</span>
+              <span>//</span>
+              <!-- EDITABLE: Section 01 super-label -->
+              <span>Featured Projects &amp; Academic Builds</span>
+            </div>
+            <!-- EDITABLE: Section 01 Title -->
+            <h2 class="section-title">Web, Desktop &amp; Mobile Applications</h2>
+            <!-- EDITABLE: Section 01 Subtitle -->
+            <p class="section-desc">
+              Academic capstone and side projects covering cross-platform mobile development, desktop management software, and full-stack web platforms.
+            </p>
+          </div>
+          <!-- EDITABLE: Technology category tags -->
+          <div class="section-tags-bar">
+            FLUTTER • JAVA • LARAVEL • PYTHON • MYSQL
+          </div>
+        </div>
+
+        <!-- 3-Column Projects Card Grid -->
+        <div class="projects-grid">
+
+          <!-- Card 1: CampusPulse (Mobile / Flutter) -->
+          <!-- EDITABLE: Project 1 Details -->
+          <article class="project-card">
+            <div class="project-card-top">
+              <div class="project-meta-strip">
+                <span class="project-badge badge-sky-tint">CROSS-PLATFORM APP</span>
+                <span class="material-symbols-outlined" style="color: var(--color-text-dim);">smartphone</span>
+              </div>
+              <div class="project-header-brand">
+                <div class="project-icon-box project-icon-box-sky">CP</div>
+                <div>
+                  <h3 class="project-title">CampusPulse</h3>
+                  <p class="project-subtitle">Student Community &amp; Event Feed</p>
+                </div>
+              </div>
+              <p class="project-desc">
+                Cross-platform mobile application engineered with Flutter &amp; Firebase. Features local caching, offline sync, clean MVVM state management, and real-time university bulletin updates.
+              </p>
+              <div class="tech-pills">
+                <span class="tech-pill">Flutter</span>
+                <span class="tech-pill">Dart</span>
+                <span class="tech-pill">Firebase</span>
+                <span class="tech-pill">REST API</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <span class="project-card-tag" style="color: var(--color-primary);">Mobile / Android &amp; iOS</span>
+              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="project-card-link">
+                <span>GitHub Repo</span>
+                <span class="material-symbols-outlined" style="font-size: 1rem;">arrow_outward</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 2: StockTrack Pro (Featured Centerpiece Capstone) -->
+          <!-- EDITABLE: Featured Senior Capstone Project Details -->
+          <article class="project-card project-card-featured">
+            <div class="featured-glow-orb" aria-hidden="true"></div>
+            
+            <div class="project-card-top" style="position: relative; z-index: 1;">
+              <div class="project-meta-strip">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                  <span class="project-badge badge-emerald-tint">ACADEMIC CAPSTONE</span>
+                  <span class="project-badge badge-glass">SENIOR PROJECT</span>
+                </div>
+              </div>
+              <div class="project-header-brand">
+                <div class="project-icon-box project-icon-box-emerald">
+                  <span class="material-symbols-outlined" style="font-size: 1.75rem;">inventory_2</span>
+                </div>
+                <div>
+                  <h3 class="project-title" style="font-size: 1.25rem;">StockTrack Pro</h3>
+                  <p class="project-subtitle" style="color: var(--color-primary); font-weight: 500;">Desktop Inventory &amp; POS Suite</p>
+                </div>
+              </div>
+              <p class="project-desc" style="color: var(--color-text-primary);">
+                Robust desktop management application developed with Java and JavaFX. Implements local SQLite transactional storage, automated PDF reporting, barcode input, and role-based access control.
+              </p>
+              <!-- Technical Specs Matrix -->
+              <div class="featured-specs-grid">
+                <div class="spec-box">
+                  <div class="spec-label">Architecture</div>
+                  <div class="spec-val">JavaFX / MVC</div>
+                </div>
+                <div class="spec-box">
+                  <div class="spec-label">Storage</div>
+                  <div class="spec-val" style="color: var(--color-primary);">SQLite Database</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card-footer" style="flex-direction: column; gap: 0.75rem; position: relative; z-index: 1;">
+              <div class="featured-actions-grid">
+                <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="btn-card-primary">
+                  <span class="material-symbols-outlined" style="font-size: 0.95rem;">code</span>
+                  <span>View Source</span>
+                </a>
+                <a href="#contact" class="btn-card-secondary">
+                  <span class="material-symbols-outlined" style="font-size: 0.95rem;">download</span>
+                  <span>Documentation</span>
+                </a>
+              </div>
+              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="featured-footer-sublink">
+                <span>Read Capstone Architecture &amp; UML Diagrams</span>
+                <span class="material-symbols-outlined" style="font-size: 0.85rem;">arrow_forward</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 3: CareConnect Portal (Full-Stack Web) -->
+          <!-- EDITABLE: Project 3 Details -->
+          <article class="project-card">
+            <div class="project-card-top">
+              <div class="project-meta-strip">
+                <span class="project-badge badge-purple-tint">FULL-STACK WEB</span>
+                <span class="material-symbols-outlined" style="color: var(--color-text-dim);">language</span>
+              </div>
+              <div class="project-header-brand">
+                <div class="project-icon-box project-icon-box-purple">CC</div>
+                <div>
+                  <h3 class="project-title">CareConnect Portal</h3>
+                  <p class="project-subtitle">Clinic Appointment &amp; Records Web App</p>
+                </div>
+              </div>
+              <p class="project-desc">
+                Comprehensive web portal built using Laravel (PHP) and MySQL with an interactive front-end. Includes secure patient authentication, scheduling calendars, and staff administrative dashboards.
+              </p>
+              <div class="tech-pills">
+                <span class="tech-pill">Laravel</span>
+                <span class="tech-pill">PHP</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">Tailwind CSS</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <span class="project-card-tag" style="color: var(--color-tertiary);">Web Platform</span>
+              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="project-card-link">
+                <span>GitHub Repo</span>
+                <span class="material-symbols-outlined" style="font-size: 1rem;">arrow_outward</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           SECTION 02: SYSTEMS & UTILITIES EXPLORATION
+           Layout Technique: CSS Grid (3 equal columns on desktop, stacked on mobile)
+           ==================================================================== -->
+      <section class="section" id="systems">
+        
+        <!-- Section Header Bar -->
+        <div class="section-header">
+          <div>
+            <div class="section-super section-super-sky">
+              <span>02</span>
+              <span>//</span>
+              <!-- EDITABLE: Section 02 super-label -->
+              <span>Explorations &amp; Utilities</span>
+            </div>
+            <!-- EDITABLE: Section 02 Title -->
+            <h2 class="section-title">Hands-on Software &amp; Tools</h2>
+            <!-- EDITABLE: Section 02 Subtitle -->
+            <p class="section-desc">
+              Practical software projects, utility scripts, and exploratory web applications built during coursework and self-directed study.
+            </p>
+          </div>
+          <!-- EDITABLE: Section 02 Tags -->
+          <div class="section-tags-bar">
+            PYTHON • LARAVEL • FLUTTER • POSTGRESQL
+          </div>
+        </div>
+
+        <!-- 3-Column Systems Grid -->
+        <div class="systems-grid">
+
+          <!-- System 1: DevForum Community -->
+          <!-- EDITABLE: System 1 Details -->
+          <article class="system-card">
+            <div>
+              <div class="system-meta-strip">
+                <span class="system-category" style="color: var(--color-primary);">WEB SYSTEM // LARAVEL</span>
+                <span class="system-status-indicator" style="background: var(--color-primary);"></span>
+              </div>
+              <h3 class="system-title">DevForum Community</h3>
+              <p class="system-desc">
+                Discussion forum for university peers featuring threaded replies, markdown code formatting, user reputation points, and category filtering.
+              </p>
+              <div class="tech-pills" style="margin-top: 0.75rem;">
+                <span class="tech-pill">Laravel</span>
+                <span class="tech-pill">Blade</span>
+                <span class="tech-pill">MySQL</span>
+              </div>
+            </div>
+            <div class="system-card-footer">
+              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="system-link-action">
+                <span>Project Code ↗</span>
+              </a>
+              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="system-link-repo">
+                <span>GitHub Repo ↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- System 2: DataScrape & Pipeline -->
+          <!-- EDITABLE: System 2 Details -->
+          <article class="system-card">
+            <div>
+              <div class="system-meta-strip">
+                <span class="system-category" style="color: var(--color-secondary);">AUTOMATION // PYTHON</span>
+                <span class="system-status-indicator" style="background: var(--color-secondary);"></span>
+              </div>
+              <h3 class="system-title">DataScrape &amp; Pipeline</h3>
+              <p class="system-desc">
+                Automated web scraper and CSV export tool designed to aggregate educational resources, schedule tables, and sanitize tabular datasets.
+              </p>
+              <div class="tech-pills" style="margin-top: 0.75rem;">
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">BeautifulSoup</span>
+                <span class="tech-pill">Pandas</span>
+              </div>
+            </div>
+            <div class="system-card-footer">
+              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="system-link-action" style="color: var(--color-secondary);">
+                <span>Scripts ↗</span>
+              </a>
+              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="system-link-repo">
+                <span>Documentation ↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- System 3: HabitFlow Tracker -->
+          <!-- EDITABLE: System 3 Details -->
+          <article class="system-card">
+            <div>
+              <div class="system-meta-strip">
+                <span class="system-category" style="color: var(--color-tertiary);">MOBILE UI // FLUTTER</span>
+                <span class="system-status-indicator" style="background: var(--color-tertiary);"></span>
+              </div>
+              <h3 class="system-title">HabitFlow Tracker</h3>
+              <p class="system-desc">
+                Minimalist habit tracker with daily streaks, local notifications, dark-mode styling, and local SQLite state persistence.
+              </p>
+              <div class="tech-pills" style="margin-top: 0.75rem;">
+                <span class="tech-pill">Flutter</span>
+                <span class="tech-pill">Dart</span>
+                <span class="tech-pill">SQLite</span>
+              </div>
+            </div>
+            <div class="system-card-footer">
+              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="system-link-action" style="color: var(--color-tertiary);">
+                <span>Demo APK ↗</span>
+              </a>
+              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="system-link-repo">
+                <span>GitHub Repo ↗</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
       <!-- Anchors for upcoming modular sections -->
-      <div id="projects"></div>
-      <div id="systems"></div>
       <div id="stack"></div>
       <div id="education"></div>
       <div id="contact"></div>

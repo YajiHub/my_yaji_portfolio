@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <!-- EDITABLE: Update title and meta description to match your profile -->
+  <title>Jopur Jay Montecillo — 4th Year Software Development Student & Engineer</title>
+  <meta name="title" content="Jopur Jay Montecillo — Software Development Portfolio" />
+  <meta name="description" content="Portfolio of Jopur Jay Montecillo, 4th-year Computer Science / Software Development student specializing in full-stack web systems, desktop software, and cross-platform mobile apps." />
+
+  <!-- Google Fonts: Geist, JetBrains Mono, Material Symbols Outlined -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
+  <!-- Core Stylesheet with CSS Custom Properties -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Application Logic -->
+  <script src="app.js" defer></script>
+</head>
+<body class="bg-grid-pattern">
+
+  <!-- ========================================================================
+       TOP FLOATING COMMAND BAR NAVIGATION
+       Layout: Flexbox with space-between alignment across mobile and desktop
+       ======================================================================== -->
+  <header class="navbar" id="top-navbar">
+    <div class="container navbar-container">
+      
+      <!-- Monogram & Personal Branding -->
+      <!-- EDITABLE: Personal initials and full name -->
+      <a href="#" class="brand" aria-label="Home - Jopur Jay Montecillo">
+        <div class="brand-monogram">JM</div>
+        <div class="brand-info">
+          <span class="brand-name">Jopur Jay Montecillo</span>
+          <span class="brand-title">4th Year Software Dev Student</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="#projects" class="nav-link">01. Projects</a>
+        <a href="#systems" class="nav-link">02. Platforms</a>
+        <a href="#stack" class="nav-link">03. Tech Stack</a>
+        <a href="#education" class="nav-link">04. Activity &amp; Education</a>
+        <a href="#contact" class="nav-link">05. Contact</a>
+      </nav>
+
+      <!-- Availability Badge & Terminal Shortcut -->
+      <div class="nav-actions">
+        <!-- EDITABLE: Graduation status & career availability -->
+        <div class="status-pill" title="Currently open for opportunities">
+          <span class="status-dot">
+            <span class="status-dot-pulse"></span>
+          </span>
+          <span>GRADUATING 2025 // OPEN FOR JUNIOR &amp; INTERN ROLES</span>
+        </div>
+
+        <a href="#contact" class="btn-terminal-contact" aria-label="Jump to Contact Section">
+          <span class="material-symbols-outlined" style="color: var(--color-primary); font-size: 1rem;">terminal</span>
+          <span>Contact</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN CONTENT CONTAINER
+       ======================================================================== -->
+  <main id="main-content">
+    
+    <!-- Ambient Background Radial Halos -->
+    <div class="ambient-glow ambient-glow-emerald" aria-hidden="true"></div>
+    <div class="ambient-glow ambient-glow-sky" aria-hidden="true"></div>
+
+    <div class="container">
+
+      <!-- ====================================================================
+           HERO SECTION
+           Layout: 12-column CSS Grid on desktop (7 cols left, 5 cols right),
+           collapsing to single column on tablet/mobile screens.
+           ==================================================================== -->
+      <section class="section hero-section" id="hero">
+        <div class="hero-grid">
+
+          <!-- Left Column: Bio, Headline, Telemetry Metrics, CTA Actions -->
+          <div class="hero-content">
+            
+            <!-- Terminal Breadcrumb -->
+            <!-- EDITABLE: Terminal prompt path -->
+            <div class="terminal-path-pill">
+              <span class="path-lead">~/students/jopur-jay</span>
+              <span class="path-separator">::</span>
+              <span class="path-track">software-dev-track</span>
+            </div>
+
+            <!-- Primary Headline -->
+            <!-- EDITABLE: Value proposition headline -->
+            <h1 class="hero-headline">
+              Building <span class="gradient-text">full-stack web</span>, desktop &amp; cross-platform applications.
+            </h1>
+
+            <!-- Narrative Paragraph -->
+            <!-- EDITABLE: Profile summary & career focus -->
+            <p class="hero-bio">
+              4th-year Computer Science / Software Development student passionate about crafting clean code, robust backend architectures, and intuitive user experiences across web, desktop, and mobile.
+            </p>
+
+            <!-- Metrics Telemetry Cards (CSS Grid: 3 columns) -->
+            <!-- EDITABLE: Key metrics and accomplishments -->
+            <div class="hero-metrics">
+              <div class="metric-card">
+                <span class="metric-val">4th Year</span>
+                <span class="metric-label">BS Software Dev</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-val metric-val-emerald">7+ Stacks</span>
+                <span class="metric-label">Languages &amp; Libs</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-val metric-val-sky">Lead</span>
+                <span class="metric-label">Senior Capstone</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons (Flexbox row with wrap) -->
+            <!-- EDITABLE: Primary actions & external links -->
+            <div class="hero-actions">
+              <a href="#projects" class="btn-primary">
+                <span>View Projects &amp; Repos</span>
+                <span class="material-symbols-outlined" style="font-size: 1.1rem;">arrow_downward</span>
+              </a>
+              <a href="https://github.com/jopurjay" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                <span class="material-symbols-outlined" style="font-size: 1.1rem; color: var(--color-text-muted);">code</span>
+                <span>GitHub Profile</span>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Studio Portrait Frame & Status Overlays -->
+          <div class="hero-visual">
+            <div class="portrait-frame-wrapper">
+              <div class="portrait-media-box">
+                <!-- EDITABLE: Portrait image source -->
+                <img 
+                  src="assets/images/my_portrait.png" 
+                  alt="Jopur Jay Montecillo - Software Development Student and Engineer" 
+                  width="360" 
+                  height="450" 
+                  loading="eager"
+                />
+                
+                <!-- Atmospheric vignette gradient -->
+                <div class="portrait-overlay-gradient" aria-hidden="true"></div>
+
+                <!-- Top Status Badge Bar -->
+                <div class="portrait-top-strip">
+                  <div class="badge-status">
+                    <span class="status-dot" style="width: 6px; height: 6px;"></span>
+                    <!-- EDITABLE: Candidate status pill text -->
+                    <span>STATUS // 4TH YEAR CS CANDIDATE</span>
+                  </div>
+                  <!-- EDITABLE: Location badge -->
+                  <div class="badge-location">PHILIPPINES</div>
+                </div>
+
+                <!-- Bottom Floating Focus Card -->
+                <div class="portrait-bottom-card">
+                  <div class="portrait-bottom-card-header">
+                    <div class="portrait-bottom-card-title">
+                      <span class="material-symbols-outlined" style="color: var(--color-primary); font-size: 1rem;">school</span>
+                      <!-- EDITABLE: Academic label -->
+                      <span>Academic Focus</span>
+                    </div>
+                    <!-- EDITABLE: Graduation year -->
+                    <span class="portrait-bottom-card-cohort">CLASS OF 2025</span>
+                  </div>
+                  <!-- EDITABLE: Quick summary -->
+                  <p class="portrait-bottom-card-desc">
+                    Full-stack web systems, desktop enterprise software &amp; cross-platform mobile apps.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Anchors for upcoming modular sections -->
+      <div id="projects"></div>
+      <div id="systems"></div>
+      <div id="stack"></div>
+      <div id="education"></div>
+      <div id="contact"></div>
+
+    </div>
+  </main>
+
+</body>
+</html>

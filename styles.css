@@ -1,0 +1,698 @@
+/* ==========================================================================
+   Obsidian Terminal - Design System & Stylesheet
+   Tech Stack: Plain HTML5, CSS Custom Properties, Vanilla JS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. DESIGN TOKENS (CSS Custom Properties)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Color Palette - Canvas & Surfaces */
+  --color-canvas: #09090b;
+  --color-surface: #111216;
+  --color-surface-dim: #0d0e12;
+  --color-surface-card: #111216;
+  --color-surface-card-hover: #181920;
+  --color-surface-elevated: #181920;
+  --color-surface-glass: rgba(9, 9, 11, 0.8);
+  --color-surface-glass-card: rgba(17, 18, 22, 0.75);
+
+  /* Borders & Dividers */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-hover: rgba(255, 255, 255, 0.18);
+  --color-border-stroke: #22242a;
+  --color-border-accent: rgba(16, 185, 129, 0.4);
+
+  /* Typography Colors */
+  --color-text-focus: #f8fafc;
+  --color-text-primary: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-text-dim: #64748b;
+
+  /* Accent Signals */
+  --color-primary: #10b981;
+  --color-primary-dim: #059669;
+  --color-primary-glow: rgba(16, 185, 129, 0.15);
+  --color-secondary: #38bdf8;
+  --color-secondary-dim: #0284c7;
+  --color-secondary-glow: rgba(56, 189, 248, 0.12);
+  --color-tertiary: #a78bfa;
+  --color-tertiary-dim: #7c3aed;
+
+  /* Typography Families */
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Spacing Scale */
+  --space-xs: 0.25rem;   /* 4px */
+  --space-sm: 0.5rem;    /* 8px */
+  --space-md: 1rem;      /* 16px */
+  --space-lg: 1.5rem;    /* 24px */
+  --space-xl: 2.5rem;    /* 40px */
+  --space-2xl: 4rem;     /* 64px */
+  --space-3xl: 6rem;     /* 96px */
+
+  /* Border Radii */
+  --radius-sm: 0.25rem;  /* 4px */
+  --radius-md: 0.375rem; /* 6px */
+  --radius-lg: 0.5rem;   /* 8px */
+  --radius-xl: 0.75rem;  /* 12px */
+  --radius-2xl: 1rem;    /* 16px */
+  --radius-full: 9999px;
+
+  /* Shadows & Insets */
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --shadow-glow-emerald: 0 0 25px rgba(16, 185, 129, 0.25);
+  --shadow-inset-glass: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+
+  /* Layout Constraint */
+  --max-width: 1200px;
+  --gutter: 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   2. MODERN CSS RESET & GLOBAL STYLES
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-canvas);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ambient Dot Grid Pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+
+/* Selection Color */
+::selection {
+  background-color: rgba(16, 185, 129, 0.25);
+  color: var(--color-primary);
+}
+
+/* Accessibility Focus Ring */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   3. LAYOUT UTILITIES
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Section Wrapper Spacing */
+.section {
+  padding-block: var(--space-2xl);
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   4. NAVIGATION BAR (Sticky Floating Command Bar)
+   Layout Technique: Flexbox with justify-content: space-between
+   Why Flexbox? Perfect for 1D horizontal bar with fluid items & alignment.
+   -------------------------------------------------------------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--color-surface-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.875rem;
+}
+
+/* Brand Monogram */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  group-cursor: pointer;
+}
+
+.brand-monogram {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  box-shadow: var(--shadow-inset-glass);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.brand:hover .brand-monogram {
+  border-color: var(--color-border-accent);
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-focus);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.brand-title {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}
+
+/* Desktop Nav Links Pill */
+.nav-links {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+  }
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-text-focus);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Status Pill & Action */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.status-pill {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+@media (min-width: 640px) {
+  .status-pill {
+    display: inline-flex;
+  }
+}
+
+.status-dot {
+  position: relative;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+}
+
+.status-dot-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  animation: pulse-ring 1.8s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(2.2); opacity: 0; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.btn-terminal-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.875rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-focus);
+  transition: all 0.2s ease;
+}
+
+.btn-terminal-contact:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--color-border-accent);
+}
+
+/* --------------------------------------------------------------------------
+   5. HERO SECTION
+   Layout Technique: CSS Grid (12 Columns)
+   Why Grid? Provides rigid 2D alignment: 7 cols for hero text, 5 cols for frame.
+   On mobile, collapses gracefully to a single vertical column.
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding-top: calc(5rem + var(--space-xl));
+  padding-bottom: var(--space-2xl);
+  position: relative;
+}
+
+/* Ambient Radial Glow Halos */
+.ambient-glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: var(--radius-full);
+  z-index: 0;
+}
+
+.ambient-glow-emerald {
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  filter: blur(80px);
+}
+
+.ambient-glow-sky {
+  top: 30%;
+  right: 5%;
+  width: 450px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.06) 0%, transparent 70%);
+  filter: blur(90px);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+  }
+  
+  .hero-content {
+    grid-column: span 7;
+  }
+  
+  .hero-visual {
+    grid-column: span 5;
+    justify-self: end;
+  }
+}
+
+/* Hero Content Area */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+/* Terminal Path Breadcrumb */
+.terminal-path-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.terminal-path-pill .path-lead {
+  color: var(--color-primary);
+}
+
+.terminal-path-pill .path-separator {
+  color: var(--color-text-dim);
+}
+
+.terminal-path-pill .path-track {
+  color: var(--color-secondary);
+}
+
+/* Headline */
+.hero-headline {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: var(--color-text-focus);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #5eead4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Bio Text */
+.hero-bio {
+  font-size: 1.0625rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 38rem;
+}
+
+/* Metric Boxes Grid */
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 34rem;
+  padding-top: 0.25rem;
+}
+
+.metric-card {
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-xl);
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-border-hover);
+}
+
+.metric-val {
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text-focus);
+  line-height: 1.2;
+}
+
+.metric-val-emerald {
+  color: var(--color-primary);
+}
+
+.metric-val-sky {
+  color: var(--color-secondary);
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 0.2rem;
+}
+
+/* Action Buttons */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.875rem;
+  padding-top: 0.5rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary);
+  color: #052e16;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #34d399;
+  box-shadow: 0 6px 25px rgba(16, 185, 129, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-focus);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: var(--color-border-hover);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   Hero Visual - Portrait Studio Card
+   -------------------------------------------------------------------------- */
+.hero-visual {
+  width: 100%;
+  max-width: 24rem;
+  margin-inline: auto;
+}
+
+.portrait-frame-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-2xl);
+  padding: 0.625rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 60%, transparent 100%);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(16px);
+}
+
+.portrait-media-box {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.portrait-media-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: contrast(1.05) brightness(0.98);
+}
+
+/* Dark gradient overlay for text readability */
+.portrait-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 35%, rgba(9, 9, 11, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* Top Badge Bar on Portrait */
+.portrait-top-strip {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--color-primary);
+  letter-spacing: 0.03em;
+}
+
+.badge-location {
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--color-text-muted);
+}
+
+/* Bottom Card on Portrait */
+.portrait-bottom-card {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-lg);
+  background: rgba(9, 9, 11, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-card);
+}
+
+.portrait-bottom-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+}
+
+.portrait-bottom-card-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-focus);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.portrait-bottom-card-cohort {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  color: var(--color-primary);
+}
+
+.portrait-bottom-card-desc {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   ICONS HELPER (Google Material Symbols)
+   -------------------------------------------------------------------------- */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.125rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}

@@ -1347,6 +1347,23 @@ img {
   text-decoration: underline;
 }
 
+.heatmap-interactive-link {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-xl);
+  padding: 0.5rem;
+  margin: -0.5rem;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.heatmap-interactive-link:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
 .heatmap-months-labels {
   display: flex;
   justify-content: space-between;

@@ -109,4 +109,89 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 4. Live GitHub Contributions & Repository Telemetry
+  // EDITABLE: GitHub username for live telemetry
+  const GITHUB_USERNAME = 'YajiHub';
+
+  async function loadLiveGitHubData(username) {
+    const commitPill = document.getElementById('githubCommitCount');
+    const repoSpan = document.getElementById('githubRepoCount');
+    const heatmapGrid = document.getElementById('githubHeatmapGrid');
+
+    // Fetch repository count from official GitHub API
+    try {
+      const userRes = await fetch(`https://api.github.com/users/${username}`);
+      if (userRes.ok) {
+        const userData = await userRes.json();
+        if (repoSpan && typeof userData.public_repos === 'number') {
+          repoSpan.textContent = `${userData.public_repos} Repositories`;
+        }
+      }
+    } catch (e) {
+      console.warn('Could not fetch GitHub user repo stats:', e);
+    }
+
+    // Fetch real-time contribution matrix from public contributions API
+    try {
+      const contribRes = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`);
+      if (!contribRes.ok) return;
+
+      const data = await contribRes.json();
+      if (!data || !data.contributions || !Array.isArray(data.contributions)) return;
+
+      // Update commit count badge dynamically
+      if (commitPill && data.total && typeof data.total.lastYear === 'number') {
+        commitPill.textContent = `${data.total.lastYear} contributions`;
+      }
+
+      // Group contributions into the 12 monthly columns (4 representative weeks per month)
+      const contributions = data.contributions;
+      if (contributions.length > 0 && heatmapGrid) {
+        const monthlyBuckets = {};
+        contributions.forEach(item => {
+          const monthKey = item.date.slice(0, 7); // YYYY-MM
+          if (!monthlyBuckets[monthKey]) {
+            monthlyBuckets[monthKey] = [];
+          }
+          monthlyBuckets[monthKey].push(item);
+        });
+
+        const monthKeys = Object.keys(monthlyBuckets).slice(-12);
+        let newGridHTML = '';
+
+        monthKeys.forEach(mKey => {
+          const days = monthlyBuckets[mKey];
+          const chunkSize = Math.max(1, Math.floor(days.length / 4));
+          newGridHTML += '<div class="heatmap-column">';
+
+          for (let row = 0; row < 4; row++) {
+            const start = row * chunkSize;
+            const end = (row === 3) ? days.length : (row + 1) * chunkSize;
+            const chunk = days.slice(start, end);
+
+            let maxLevel = 0;
+            let totalWeekCount = 0;
+            chunk.forEach(d => {
+              if (d.level > maxLevel) maxLevel = d.level;
+              totalWeekCount += d.count || 0;
+            });
+
+            const dateRange = chunk.length > 0 ? `${chunk[0].date} to ${chunk[chunk.length - 1].date}` : mKey;
+            const tooltip = `${totalWeekCount} contribution${totalWeekCount === 1 ? '' : 's'} (${dateRange})`;
+
+            newGridHTML += `<div class="heatmap-cell heat-${maxLevel}" title="${tooltip}"></div>`;
+          }
+
+          newGridHTML += '</div>';
+        });
+
+        heatmapGrid.innerHTML = newGridHTML;
+      }
+    } catch (err) {
+      console.warn('Could not fetch live GitHub contribution heatmap:', err);
+    }
+  }
+
+  loadLiveGitHubData(GITHUB_USERNAME);
 });
